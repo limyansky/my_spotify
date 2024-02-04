@@ -16,10 +16,6 @@ api = spotipy.Spotify(client_credentials_manager=SpotifyClientCredentials())
 
 unique_songs = data["spotify_track_uri"].drop_duplicates().reset_index(drop=True)
 
-print("THIS IS A TEST")
-unique_songs = unique_songs[0:103]
-
-
 dfs = []
 for chunk in tqdm(np.array_split(unique_songs, (len(unique_songs)/50)+1)):
     result = api.tracks(chunk)['tracks']
