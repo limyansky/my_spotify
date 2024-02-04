@@ -15,13 +15,14 @@ data = pd.read_csv(file_string)
 api = spotipy.Spotify(client_credentials_manager=SpotifyClientCredentials())
 
 unique_songs = data["spotify_track_uri"].drop_duplicates().reset_index(drop=True)
+unique_songs = unique_songs.dropna()
 
 dfs = []
 for chunk in tqdm(np.array_split(unique_songs, (len(unique_songs)/50)+1)):
     result = api.tracks(chunk)['tracks']
 
     for song in result:
-        df = pd.DataFrame({"song_uri":song["uri"], 
+        df = pd.DataFrame({"song_uri":song["uri"],
                            "artist_uris":pd.DataFrame(song["artists"])["uri"].to_list()})
         dfs.append(df)
 
