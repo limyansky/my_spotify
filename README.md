@@ -4,3 +4,11 @@ I built a [Tableau Dashboard](https://public.tableau.com/views/MySpotifyData_170
 ![My Spotify Dashboard](./docs/images/Dashboard.png)
 
 # Directory Structure
+```
+.
+├── docs                    # Documentation files
+│   └──images               # Images used in README
+├── notebooks               # Tableau/Mathematica files used in exploration
+├── python                  # Scripts for data processing/API access
+└── README.md               # This file
+```
