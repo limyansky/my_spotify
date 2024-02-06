@@ -4,6 +4,7 @@ I built a [Tableau Dashboard](https://public.tableau.com/views/MySpotifyData_170
 ![My Spotify Dashboard](./docs/images/Dashboard.png)
 
 # Directory and Files
+
 ## Directory Structure
 ```
 .
